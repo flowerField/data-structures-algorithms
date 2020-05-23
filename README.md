@@ -8,20 +8,20 @@ Introduce common data structures and algorithms in JavaScript
 
    核心成员 | 说明 |
 | ------ | ------------------ |
-|  dataStore |  | 
+|  dataStore | 内部数据 | 
 |  length() | 获取列表的长度  |
 |  listSize | 列表的长度 |
 |  clear() | 清理列表(删除列表中的所有数据并重置指针和长度) |
-|  toString | 文本文本 |
-|  inset | 文本文本 |
-|  append | 文本文本 |
-|  front | 文本文本 |
-|  end | 文本文本 |
-|  next | 文本文本 |
-|  prev | 文本文本 |
-|  remove | 文本文本 |
-|  currentPos | 文本文本 |
-|  moveTo | 文本文本 |
+|  toString | 转换为字符串显示 |
+|  insert | 列表中插入元素 |
+|  append | 在列表后追加元素 |
+|  front | 指针回到列表开头 |
+|  end | 指针移动到列表末尾 |
+|  next | 指针向后移动 |
+|  prev | 指针向前移动 |
+|  remove | 删除列表中指定的元素 |
+|  currentPos | 获取当前的指针位置 |
+|  moveTo | 移动指针到特定位置 |
 | ------ | ---------- |
 
 ```javascript
