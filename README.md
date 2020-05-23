@@ -4,9 +4,8 @@ Introduce common data structures and algorithms in JavaScript
 
 ## 常用基础数据结构
 
-### [List]()
+> <font face="微软雅黑" size = 5 color = #195 >列表( List )的抽象数据类型定义</font>
 
-> 列表( List )的抽象数据类型定义
 
 内置属性 | 属性说明 |   核心方法 | 功能介绍 |
 | ------ | ------------------ |------------------ |------------------ |
