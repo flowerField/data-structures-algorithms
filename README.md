@@ -4,7 +4,7 @@ Introduce common data structures and algorithms in JavaScript
 
 ## 常用基础数据结构
 
-> <font face="微软雅黑" size = 5 color = #195 >列表( List )的抽象数据类型定义</font>
+> <font face="微软雅黑" size = 5 color = #195 >`列表( List )的抽象数据类型定义`</font>
 
 
 <table>
@@ -26,11 +26,11 @@ Introduce common data structures and algorithms in JavaScript
 <tr><td></td><td></td><td bgcolor=#195>prev( )</td><td>指针向前移动</td></tr>
 <tr><td></td><td></td><td bgcolor=#195>showList( )</td><td>显示列表信息</td></tr>
 <tr><td></td><td></td><td bgcolor=#195>currentPos( )</td><td>获取当前的指针位置</td></tr>
-<tr><td></td><td></td><td bgcolor=#195>insert( element )</td><td>在列表任意位置插入元素</td></tr>
-<tr><td></td><td></td><td bgcolor=#195>remove( element )</td><td>删除列表中指定的元素</td></tr>
+<tr><td></td><td></td><td bgcolor=#195>insert( element )</td><td>往列表中间插入元素</td></tr>
+<tr><td></td><td></td><td bgcolor=#195>remove( element )</td><td>删除列表中指定元素</td></tr>
 <tr><td></td><td></td><td bgcolor=#195>append( element )</td><td>在列表末尾追加元素</td></tr>
 <tr><td></td><td></td><td bgcolor=#195>moveTo( element,after )</td><td>移动指针到特定位置</td></tr>
-<tr><td></td><td></td><td bgcolor=#195>getCurrentElement( )</td><td>获取指针当前指向的元素</td></tr>
+<tr><td></td><td></td><td bgcolor=#195>getCurrentElement( )</td><td>获取当前指向的元素</td></tr>
 
 </tbody>
 </table>
