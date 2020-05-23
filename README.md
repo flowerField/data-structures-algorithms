@@ -9,7 +9,7 @@ Introduce common data structures and algorithms in JavaScript
 
 内置属性 | 属性说明 |   核心方法 | 功能介绍 |
 | ------ | ------------------ |------------------ |------------------ |
-|  `dataStore` | 内部数据 | | |
+| `dataStore` | 内部数据 | | |
 |  `pos` | 指向当前位置的指针 | | |
 |  `listSize` | 标识列表的长度 | | |
 |||  length() | 获取列表的长度  |
@@ -26,6 +26,35 @@ Introduce common data structures and algorithms in JavaScript
 |||  currentPos() | 获取当前的指针位置 |
 |||  getCurrentElement()| 获取指针当前指向的元素 |
 |||  showList()| 显示列表信息 |
+
+
+<table>
+<thead>
+<tr>
+<th>内部属性</th>
+<th>属性说明</th>
+<th>核心方法</th>
+<th>功能介绍</th>
+</tr>
+</thead>
+<tbody>
+<tr><td bgcolor=#195>pos</td><td>指向当前位置的指针</td><td bgcolor=#195>clear()</td><td>清空列表并重置指针</td></tr>
+<tr><td bgcolor=#195>listSize</td><td>标识列表的长度</td><td bgcolor=#195>toString()</td><td>转换为字符串显示</td></tr>
+<tr><td bgcolor=#195>dataStore</td><td>内部数据</td><td bgcolor=#195>length()</td><td>获取列表的长度</td></tr>
+<tr><td></td><td></td><td bgcolor=#195>start()</td><td>移动指针列表开头</td></tr>
+<tr><td></td><td></td><td bgcolor=#195>end() </td><td>移动指针到列表末尾</td></tr>
+<tr><td></td><td></td><td bgcolor=#195>next()</td><td>指针向后移动</td></tr>
+<tr><td></td><td></td><td bgcolor=#195>prev()</td><td>指针向前移动</td></tr>
+<tr><td></td><td></td><td bgcolor=#195>showList()</td><td>显示列表信息</td></tr>
+<tr><td></td><td></td><td bgcolor=#195>currentPos()</td><td>获取当前的指针位置</td></tr>
+<tr><td></td><td></td><td bgcolor=#195>append(element)</td><td>在列表末尾追加元素</td></tr>
+<tr><td></td><td></td><td bgcolor=#195>insert( element)</td><td>在列表任意位置插入元素</td></tr>
+<tr><td></td><td></td><td bgcolor=#195>remove( element)</td><td>删除列表中指定的元素</td></tr>
+<tr><td></td><td></td><td bgcolor=#195>moveTo(element,after)</td><td>移动指针到特定位置</td></tr>
+<tr><td></td><td></td><td bgcolor=#195>getCurrentElement()</td><td>获取指针当前指向的元素</td></tr>
+
+</tbody>
+</table>
 
 ```javascript
 class List {
@@ -44,7 +73,7 @@ class List {
         let findIndex = this.find(element);
         return findIndex == -1 ? false : true;
     }
-    front() {
+    start() {
         this.pos = 0;
     }
     end() {
