@@ -18,6 +18,59 @@ function () {
   }
 
   _createClass(List, [{
+    key: "length",
+    value: function length() {
+      return this.listSize;
+    }
+  }, {
+    key: "toString",
+    value: function toString() {
+      return this.dataStore.join("\n");
+    }
+  }, {
+    key: "contains",
+    value: function contains(element) {
+      var findIndex = this.find(element);
+      return findIndex == -1 ? false : true;
+    }
+  }, {
+    key: "front",
+    value: function front() {
+      this.pos = 0;
+    }
+  }, {
+    key: "end",
+    value: function end() {
+      this.pos = this.listSize - 1;
+    }
+  }, {
+    key: "prev",
+    value: function prev() {
+      if (this.pos > 0) {
+        --this.pos;
+      }
+    }
+  }, {
+    key: "next",
+    value: function next() {
+      if (this.pos < this.listSize - 1) {
+        ++this.pos;
+      }
+    }
+  }, {
+    key: "insert",
+    value: function insert(element, after) {
+      var insertIndex = this.find(element);
+
+      if (insertIndex != -1) {
+        this.dataStore.splice(insertIndex + 1, 0, element);
+        --this.listSize;
+        return true;
+      }
+
+      return false;
+    }
+  }, {
     key: "append",
     value: function append(element) {
       this.dataStore[this.listSize++] = element;
@@ -49,63 +102,10 @@ function () {
       return false;
     }
   }, {
-    key: "length",
-    value: function length() {
-      return this.listSize;
-    }
-  }, {
-    key: "toString",
-    value: function toString() {
-      return this.dataStore.join("\n");
-    }
-  }, {
-    key: "insert",
-    value: function insert(element, after) {
-      var insertIndex = this.find(element);
-
-      if (insertIndex != -1) {
-        this.dataStore.splice(insertIndex + 1, 0, element);
-        --this.listSize;
-        return true;
-      }
-
-      return false;
-    }
-  }, {
     key: "clear",
     value: function clear() {
       this.dataStore = [];
       this.listSize = this.pos = 0;
-    }
-  }, {
-    key: "contains",
-    value: function contains(element) {
-      var findIndex = this.find(element);
-      return findIndex == -1 ? false : true;
-    }
-  }, {
-    key: "front",
-    value: function front() {
-      this.pos = 0;
-    }
-  }, {
-    key: "end",
-    value: function end() {
-      this.pos = this.listSize - 1;
-    }
-  }, {
-    key: "prev",
-    value: function prev() {
-      if (this.pos > 0) {
-        --this.pos;
-      }
-    }
-  }, {
-    key: "next",
-    value: function next() {
-      if (this.pos < this.listSize - 1) {
-        ++this.pos;
-      }
     }
   }, {
     key: "currentPos",

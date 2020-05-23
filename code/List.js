@@ -4,6 +4,41 @@ class List {
         this.pos = 0;
         this.dataStore = [];
     }
+    length() {
+        return this.listSize;
+    }
+    toString() {
+        return this.dataStore.join("\n");
+    }
+    contains(element) {
+        let findIndex = this.find(element);
+        return findIndex == -1 ? false : true;
+    }
+    front() {
+        this.pos = 0;
+    }
+    end() {
+        this.pos = this.listSize - 1;
+    }
+    prev() {
+        if (this.pos > 0) {
+            --this.pos;
+        }
+    }
+    next() {
+        if (this.pos < this.listSize - 1) {
+            ++this.pos;
+        }
+    }
+    insert(element, after) {
+        let insertIndex = this.find(element);
+        if (insertIndex != -1) {
+            this.dataStore.splice(insertIndex + 1, 0, element);
+            --this.listSize;
+            return true;
+        }
+        return false;
+    }
     append(element) {
         this.dataStore[this.listSize++] = element;
     }
@@ -25,44 +60,9 @@ class List {
         }
         return false;
     }
-    length() {
-        return this.listSize;
-    }
-    toString() {
-        return this.dataStore.join("\n");
-    }
-    insert(element, after) {
-        let insertIndex = this.find(element);
-        if (insertIndex != -1) {
-            this.dataStore.splice(insertIndex + 1, 0, element);
-            --this.listSize;
-            return true;
-        }
-        return false;
-    }
     clear() {
         this.dataStore = [];
         this.listSize = this.pos = 0;
-    }
-    contains(element) {
-        let findIndex = this.find(element);
-        return findIndex == -1 ? false : true;
-    }
-    front() {
-        this.pos = 0;
-    }
-    end() {
-        this.pos = this.listSize - 1;
-    }
-    prev() {
-        if (this.pos > 0) {
-            --this.pos;
-        }
-    }
-    next() {
-        if (this.pos < this.listSize - 1) {
-            ++this.pos;
-        }
     }
     currentPos() {
         return this.pos;
