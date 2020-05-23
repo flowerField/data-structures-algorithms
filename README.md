@@ -2,7 +2,7 @@
 Introduce common data structures and algorithms in JavaScript
 
 
-## [数据结构]()
+## 常用基础数据结构
 
 ### [List]()
 
@@ -109,13 +109,15 @@ class List {
     }
 }
 ```
-### [stack]()
+### [Stack]()
 
-### [queue]()
+### [Queue]()
 
-### [set]()
+### [Set]()
 
-### [dictionary]()
+### [Dictionary]()
+
+### [Tree]]()
 
 
 ## [博客文章]()
