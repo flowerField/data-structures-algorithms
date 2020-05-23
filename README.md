@@ -18,9 +18,9 @@ Introduce common data structures and algorithms in JavaScript
 </tr>
 </thead>
 <tbody>
-<tr><td> List 列表</td><td bgcolor=#195>`pos`</td><td>指向当前位置的指针</td><td bgcolor=#195>clear()</td><td>清空列表重置指针</td></tr>
-<tr><td></td><td bgcolor=#195>`listSize`</td><td>标识列表的长度</td><td bgcolor=#195>toString()</td><td>转换为字符串显示</td></tr>
-<tr><td></td><td bgcolor=#195>`dataStore`</td><td>内部数据</td><td bgcolor=#195>length()</td><td>获取当前列表长度</td></tr>
+<tr><td> List 列表</td><td bgcolor=#195>dataStore</td><td>内部数据</td><td bgcolor=#195>clear()</td><td>清空列表重置指针</td></tr>
+<tr><td></td><td bgcolor=#195>listSize</td><td>标识列表的长度</td><td bgcolor=#195>toString()</td><td>转换为字符串显示</td></tr>
+<tr><td></td><td bgcolor=#195>pos</td><td>标识位置的指针</td><td bgcolor=#195>length()</td><td>获取当前列表长度</td></tr>
 <tr><td></td><td></td><td></td><td bgcolor=#195>start( )</td><td>移动指针列表开头</td></tr>
 <tr><td></td><td></td><td></td><td bgcolor=#195>end( ) </td><td>移动指针列表末尾</td></tr>
 <tr><td></td><td></td><td></td><td bgcolor=#195>next(  )</td><td>操作指针向后移动</td></tr>
