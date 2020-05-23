@@ -25,7 +25,6 @@ class Queue {
     toString() {
         return this.dataStore.join("\n");
     }
-
 }
 
 function radixSort(list) {
