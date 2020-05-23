@@ -64,7 +64,7 @@ function () {
 
       if (insertIndex != -1) {
         this.dataStore.splice(insertIndex + 1, 0, element);
-        --this.listSize;
+        ++this.listSize;
         return true;
       }
 
@@ -127,19 +127,27 @@ function () {
   }, {
     key: "showList",
     value: function showList() {
-      for (this.front(); this.currentPos() < this.length(); this.next()) {
-        console.log(this.getCurrentElement());
+      for (var i = 0; i < this.dataStore.length; i++) {
+        console.log("".concat(this.dataStore[i]));
       }
     }
   }]);
 
   return List;
 }();
+/* 0 1 2 3  */
+
 
 var list = new List();
-list.append("Yong"); // list.append("Jin");
-// list.append("Xia");
-// list.append("Ping");
-// list.showList();
-
-console.log(list.dataStore);
+list.append("Yong");
+list.append("Jin");
+list.append("Xia");
+list.append("Ping");
+list.showList();
+console.log(list.toString()); // console.log(list.dataStore);
+// console.dir(list.currentPos());
+// console.log(list.length());
+// console.log(list.pos)
+// console.log(list.next());
+// console.log(list.pos)
+// console.log(list.getCurrentElement());

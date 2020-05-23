@@ -34,7 +34,7 @@ class List {
         let insertIndex = this.find(element);
         if (insertIndex != -1) {
             this.dataStore.splice(insertIndex + 1, 0, element);
-            --this.listSize;
+            ++this.listSize;
             return true;
         }
         return false;
@@ -76,16 +76,25 @@ class List {
         return this.dataStore[this.pos];
     }
     showList() {
-        for (this.front(); this.currentPos() < this.length(); this.next()) {
-            console.log(this.getCurrentElement());
+        for (let i = 0; i < this.dataStore.length; i++) {
+            console.log(`${this.dataStore[i]}`)
         }
     }
 }
 
+/* 0 1 2 3  */
+
 let list = new List();
 list.append("Yong");
-// list.append("Jin");
-// list.append("Xia");
-// list.append("Ping");
-// list.showList();
-console.log(list.dataStore);
+list.append("Jin");
+list.append("Xia");
+list.append("Ping");
+list.showList();
+console.log(list.toString())
+    // console.log(list.dataStore);
+    // console.dir(list.currentPos());
+    // console.log(list.length());
+    // console.log(list.pos)
+    // console.log(list.next());
+    // console.log(list.pos)
+    // console.log(list.getCurrentElement());

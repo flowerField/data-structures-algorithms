@@ -35,45 +35,11 @@ class List {
         this.pos = 0;
         this.dataStore = [];
     }
-    append(element) {
-        this.dataStore[this.listSize++] = element;
-    }
-    find(element) {
-        for (let index = 0; index < this.dataStore.length; index++) {
-            const currentElement = this.dataStore[index];
-            if (currentElement == element) {
-                return index;
-            }
-            return -1;
-        }
-    }
-    remove(element) {
-        let findIndex = this.find(element);
-        if (findIndex != -1) {
-            this.dataStore.splice(findIndex, 1);
-            --this.listSize;
-            return true;
-        }
-        return false;
-    }
     length() {
         return this.listSize;
     }
     toString() {
         return this.dataStore.join("\n");
-    }
-    insert(element, after) {
-        let insertIndex = this.find(element);
-        if (insertIndex != -1) {
-            this.dataStore.splice(insertIndex + 1, 0, element);
-            --this.listSize;
-            return true;
-        }
-        return false;
-    }
-    clear() {
-        this.dataStore = [];
-        this.listSize = this.pos = 0;
     }
     contains(element) {
         let findIndex = this.find(element);
@@ -95,6 +61,40 @@ class List {
             ++this.pos;
         }
     }
+    insert(element, after) {
+        let insertIndex = this.find(element);
+        if (insertIndex != -1) {
+            this.dataStore.splice(insertIndex + 1, 0, element);
+            ++this.listSize;
+            return true;
+        }
+        return false;
+    }
+    append(element) {
+        this.dataStore[this.listSize++] = element;
+    }
+    find(element) {
+        for (let index = 0; index < this.dataStore.length; index++) {
+            const currentElement = this.dataStore[index];
+            if (currentElement == element) {
+                return index;
+            }
+            return -1;
+        }
+    }
+    remove(element) {
+        let findIndex = this.find(element);
+        if (findIndex != -1) {
+            this.dataStore.splice(findIndex, 1);
+            --this.listSize;
+            return true;
+        }
+        return false;
+    }
+    clear() {
+        this.dataStore = [];
+        this.listSize = this.pos = 0;
+    }
     currentPos() {
         return this.pos;
     }
@@ -107,11 +107,32 @@ class List {
         return this.dataStore[this.pos];
     }
     showList() {
-        for (this.front(); this.currentPos() < this.length(); this.next()) {
-            console.log(this.getCurrentElement());
+        for (let i = 0; i < this.dataStore.length; i++) {
+            console.log(`${this.dataStore[i]}`)
         }
     }
 }
+
+/* 测试代码： */
+let list = new List();
+list.append("Yong");
+list.append("Jin");
+list.append("Xia");
+list.append("Ping");
+list.showList();
+console.log(list.toString())
+
+/* 
+[0] Yong
+[1] Jin
+[2] Xia
+[3] Ping
+Yong
+Jin
+Xia
+Ping 
+*/
+
 ```
 ### [Stack]()
 
