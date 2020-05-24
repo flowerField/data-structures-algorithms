@@ -4,8 +4,6 @@ Introduce common data structures and algorithms in JavaScript
 
 ## 常用基础数据结构
 
-<hr>
-
 ### [List]()
 
 > <font face="微软雅黑" size = 5 color = #195 >`列表( List )的抽象数据类型定义`</font>
@@ -123,27 +121,6 @@ class List {
         }
     }
 }
-
-/* 测试代码： */
-let list = new List();
-list.append("Yong");
-list.append("Jin");
-list.append("Xia");
-list.append("Ping");
-list.showList();
-console.log(list.toString())
-
-/* 
-[0] Yong
-[1] Jin
-[2] Xia
-[3] Ping
-Yong
-Jin
-Xia
-Ping 
-*/
-
 ```
 
 <hr>
@@ -151,7 +128,6 @@ Ping
 ### [Queue]()
 
 > <font face="微软雅黑" size = 5 color = #195 >`队列( Queue )的抽象数据类型定义`</font>
-
 
 <table>
 <thead>
@@ -206,24 +182,6 @@ class Queue {
     }
 }
 
-/* 测试数据 */
-let q = new Queue([100, 200, 300]);
-console.log(q.length());
-q.enqueue(400);
-console.log(q.toString())
-console.log(q.length());
-console.log(q.isEmpty());
-
-/* 打印输出 */
-/* 
-3
-100
-200
-300
-400
-4
-false
-*/
 ```
 
 ### [Stack]()
@@ -249,54 +207,28 @@ false
 </table>
 
 ```javascript
-class Queue {
-    constructor(queue) {
-        this.dataStore = queue || [];
-        this.queueSize = queue.length || 0;
+class Stack {
+    constructor() {
+        this.top = 0;
+        this.dataStore = [];
     }
-    start() {
-        return this.dataStore[0];
+    pop() {
+        this.dataStore[--this.top];
     }
-    end() {
-        return this.dataStore[this.dataStore.length - 1];
+    push(element) {
+        this.dataStore[this.top++] = element;
     }
-    toString() {
-        return this.dataStore.join("\n");
+    peek() {
+        return this.dataStore[this.top - 1];
     }
-    isEmpty() {
-        return this.dataStore.length == 0 ? true : false;
-    }
-    enqueue(element) {
-        this.dataStore.push(element);
-        ++this.queueSize;
-    }
-    dequeue() {
-        this.dataStore.shift();
-        --this.queueSize;
+    clear() {
+        this.top = 0;
+        this.dataStore = [];
     }
     length() {
-        return this.queueSize;
+        return this.top;
     }
 }
-
-/* 测试数据 */
-let q = new Queue([100, 200, 300]);
-console.log(q.length());
-q.enqueue(400);
-console.log(q.toString())
-console.log(q.length());
-console.log(q.isEmpty());
-
-/* 打印输出 */
-/* 
-3
-100
-200
-300
-400
-4
-false
-*/
 ```
 
 ### [Set]()
