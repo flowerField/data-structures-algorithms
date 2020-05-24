@@ -53,6 +53,12 @@ function () {
     value: function length() {
       return this.queueSize;
     }
+  }, {
+    key: "clear",
+    value: function clear() {
+      this.dataStore = [];
+      this.queueSize = 0;
+    }
   }]);
 
   return Queue;

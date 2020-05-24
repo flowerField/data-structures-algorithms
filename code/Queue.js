@@ -26,6 +26,10 @@ class Queue {
     length() {
         return this.queueSize;
     }
+    clear() {
+        this.dataStore = [];
+        this.queueSize = 0;
+    }
 }
 
 /* 测试数据 */

@@ -4,8 +4,11 @@ Introduce common data structures and algorithms in JavaScript
 
 ## 常用基础数据结构
 
-> <font face="微软雅黑" size = 5 color = #195 >`列表( List )的抽象数据类型定义`</font>
+<hr>
 
+### [List]()
+
+> <font face="微软雅黑" size = 5 color = #195 >`列表( List )的抽象数据类型定义`</font>
 
 <table>
 <thead>
@@ -143,6 +146,8 @@ Ping
 
 ```
 
+<hr>
+
 ### [Queue]()
 
 > <font face="微软雅黑" size = 5 color = #195 >`队列( Queue )的抽象数据类型定义`</font>
@@ -166,6 +171,7 @@ Ping
 <tr><td></td><td></td><td></td><td bgcolor=#195>toString( ) </td><td>显示队列元素</td></tr>
 <tr><td></td><td></td><td></td><td bgcolor=#195>isEmpty( )</td><td>队列是否为空</td></tr>
 <tr><td></td><td></td><td></td><td bgcolor=#195>length( )</td><td>获取队列长度</td></tr>
+<tr><td></td><td></td><td></td><td bgcolor=#195>clear( )</td><td>清理队列内容</td></tr>
 </tbody>
 </table>
 
@@ -221,6 +227,80 @@ false
 ```
 
 ### [Stack]()
+> <font face="微软雅黑" size = 5 color = #195 >`栈(  Stack )的抽象数据类型定义`</font>
+
+<table>
+<thead>
+<tr>
+<th>数据结构</th>
+<th>内部属性</th>
+<th>属性说明</th>
+<th>核心方法</th>
+<th>功能介绍</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>  Queue 队列</td><td bgcolor=#195>dataStore</td><td>内部数据</td><td bgcolor=#195>start( )</td><td>获取队首元素</td></tr>
+<tr><td></td><td></td><td bgcolor=#195>queueSize</td><td bgcolor=#195>back( )</td><td>获取队尾元素</td></tr>
+<tr><td></td><td></td><td></td><td bgcolor=#195>enqueue( )</td><td>队尾添加元素</td></tr>
+<tr><td></td><td></td><td></td><td bgcolor=#195>dequeue( )</td><td>队首移出元素</td></tr>
+<tr><td></td><td></td><td></td><td bgcolor=#195>toString( ) </td><td>显示队列元素</td></tr>
+<tr><td></td><td></td><td></td><td bgcolor=#195>isEmpty( )</td><td>队列是否为空</td></tr>
+<tr><td></td><td></td><td></td><td bgcolor=#195>length( )</td><td>获取队列长度</td></tr>
+<tr><td></td><td></td><td></td><td bgcolor=#195>clear( )</td><td>清理队列内容</td></tr>
+</tbody>
+</table>
+
+```javascript
+class Queue {
+    constructor(queue) {
+        this.dataStore = queue || [];
+        this.queueSize = queue.length || 0;
+    }
+    start() {
+        return this.dataStore[0];
+    }
+    end() {
+        return this.dataStore[this.dataStore.length - 1];
+    }
+    toString() {
+        return this.dataStore.join("\n");
+    }
+    isEmpty() {
+        return this.dataStore.length == 0 ? true : false;
+    }
+    enqueue(element) {
+        this.dataStore.push(element);
+        ++this.queueSize;
+    }
+    dequeue() {
+        this.dataStore.shift();
+        --this.queueSize;
+    }
+    length() {
+        return this.queueSize;
+    }
+}
+
+/* 测试数据 */
+let q = new Queue([100, 200, 300]);
+console.log(q.length());
+q.enqueue(400);
+console.log(q.toString())
+console.log(q.length());
+console.log(q.isEmpty());
+
+/* 打印输出 */
+/* 
+3
+100
+200
+300
+400
+4
+false
+*/
+```
 
 ### [Set]()
 
