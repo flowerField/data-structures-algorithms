@@ -4,11 +4,10 @@ class Stack {
         this.dataStore = [];
     }
     pop() {
-        this.dataStore.pop();
-        this.top++;
+        this.dataStore[--this.top];
     }
-    push(ele) {
-        this.dataStore[this.top++] = ele;
+    push(element) {
+        this.dataStore[this.top++] = element;
     }
     peek() {
         return this.dataStore[this.top - 1];
@@ -16,6 +15,9 @@ class Stack {
     clear() {
         this.top = 0;
         this.dataStore = [];
+    }
+    length() {
+        return this.top;
     }
 }
 

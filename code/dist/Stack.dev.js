@@ -19,13 +19,12 @@ function () {
   _createClass(Stack, [{
     key: "pop",
     value: function pop() {
-      this.dataStore.pop();
-      this.top++;
+      this.dataStore[--this.top];
     }
   }, {
     key: "push",
-    value: function push(ele) {
-      this.dataStore[this.top++] = ele;
+    value: function push(element) {
+      this.dataStore[this.top++] = element;
     }
   }, {
     key: "peek",
@@ -37,6 +36,11 @@ function () {
     value: function clear() {
       this.top = 0;
       this.dataStore = [];
+    }
+  }, {
+    key: "length",
+    value: function length() {
+      return this.top;
     }
   }]);
 

@@ -165,7 +165,7 @@ Ping
 </thead>
 <tbody>
 <tr><td>  Queue 队列</td><td bgcolor=#195>dataStore</td><td>内部数据</td><td bgcolor=#195>start( )</td><td>获取队首元素</td></tr>
-<tr><td></td><td></td><td bgcolor=#195>queueSize</td><td bgcolor=#195>back( )</td><td>获取队尾元素</td></tr>
+<tr><td></td><td bgcolor=#195>queueSize</td><td>队列长度</td><td bgcolor=#195>back( )</td><td>获取队尾元素</td></tr>
 <tr><td></td><td></td><td></td><td bgcolor=#195>enqueue( )</td><td>队尾添加元素</td></tr>
 <tr><td></td><td></td><td></td><td bgcolor=#195>dequeue( )</td><td>队首移出元素</td></tr>
 <tr><td></td><td></td><td></td><td bgcolor=#195>toString( ) </td><td>显示队列元素</td></tr>
@@ -240,14 +240,11 @@ false
 </tr>
 </thead>
 <tbody>
-<tr><td>  Queue 队列</td><td bgcolor=#195>dataStore</td><td>内部数据</td><td bgcolor=#195>start( )</td><td>获取队首元素</td></tr>
-<tr><td></td><td></td><td bgcolor=#195>queueSize</td><td bgcolor=#195>back( )</td><td>获取队尾元素</td></tr>
-<tr><td></td><td></td><td></td><td bgcolor=#195>enqueue( )</td><td>队尾添加元素</td></tr>
-<tr><td></td><td></td><td></td><td bgcolor=#195>dequeue( )</td><td>队首移出元素</td></tr>
-<tr><td></td><td></td><td></td><td bgcolor=#195>toString( ) </td><td>显示队列元素</td></tr>
-<tr><td></td><td></td><td></td><td bgcolor=#195>isEmpty( )</td><td>队列是否为空</td></tr>
-<tr><td></td><td></td><td></td><td bgcolor=#195>length( )</td><td>获取队列长度</td></tr>
-<tr><td></td><td></td><td></td><td bgcolor=#195>clear( )</td><td>清理队列内容</td></tr>
+<tr><td>  Stack 栈</td><td bgcolor=#195>dataStore</td><td>内部数据</td><td bgcolor=#195>push( )</td><td>元素入栈操作</td></tr>
+<tr><td></td><td></td><td bgcolor=#195> top</td>栈顶指针<td bgcolor=#195> pop( )</td><td>元素出栈操作</td></tr>
+<tr><td></td><td></td><td></td><td bgcolor=#195>peek( )</td><td>获取栈顶元素</td></tr>
+<tr><td></td><td></td><td></td><td bgcolor=#195>clear( )</td><td>清理栈的内容</td></tr>
+<tr><td></td><td></td><td></td><td bgcolor=#195>length( )</td><td>获取栈的长度</td></tr>
 </tbody>
 </table>
 
