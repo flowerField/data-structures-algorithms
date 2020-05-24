@@ -151,7 +151,7 @@ class List {
 </tbody>
 </table>
 
-<img src="./src/queue.png" width="700px">
+<img src="./src/Queue.png" width="700px">
 
 队列( [ Queue]() )是一种列表，是一种先进先出( `FIFO` )的数据结构。
 
