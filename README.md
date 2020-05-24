@@ -34,7 +34,8 @@ Introduce common data structures and algorithms in JavaScript
 
 列表( [List]() )是一组有序的数据，列表中的数据项称为元素，数据项可以是任意类型。
 
-列表( [List]() )有长度，长度为零的列表称为空列表，列表适用于简单的待办事项列表、购物清单和排行榜等场景，给出列表的 JavaScript 语言实现。
+列表( [List]() )有长度，长度为零的列表称为空列表，列表适用于简单的待办事项列表、购物清单和排行榜等场景，在下面给出列表的 JavaScript 语言实现。
+
 
 ```javascript
 class List {
@@ -149,6 +150,10 @@ class List {
 <tr><td></td><td></td><td></td><td bgcolor=#195>clear( )</td><td>清理队列内容</td></tr>
 </tbody>
 </table>
+
+队列( [ Queue]() )是一种列表，是一种先进先出( `FIFO` )的数据结构。
+
+队列( [ Queue]() )用于存储按顺序排序的数据，在操作队列的时候遵循的是先进先出的原则，主要操作是入队( `新增元素` )和出队( `删除元素` )，队列也有长度，队列适用于处理多个动画任务的执行、打印任务池等场景，下面给出队列的 JavaScript 语言实现。
 
 ```javascript
 class Queue {
