@@ -6,7 +6,7 @@ Introduce common data structures and algorithms in JavaScript
 
 ### [List]()
 
-> <font face="微软雅黑" size = 5 color = #195 >`列表( List )的抽象数据类型定义`</font>
+> <font face="微软雅黑" size = 5 color = #195 >`列表( List )的抽象数据类型定义。`</font>
 
 <table>
 <thead>
@@ -36,6 +36,10 @@ Introduce common data structures and algorithms in JavaScript
 
 </tbody>
 </table>
+
+<img src="./src/list.png">
+
+> <font face="微软雅黑" size = 5 color = #195 >`列表( List )的是一组有序的数据，列表中的数据项我们称为元素，数据项可以是任意类型。列表有长度，长度为零的列表称为空列表，适用于简单的待办事项列表、购物清单和排行榜等场景。`</font>
 
 ```javascript
 class List {
