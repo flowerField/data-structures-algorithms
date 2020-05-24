@@ -127,6 +127,8 @@ class List {
 
 ### [Queue]()
 
+<img src="./src/queue_t.png">
+
 > <font face="微软雅黑" size = 5 color = #195 >`队列( Queue )的抽象数据类型定义。`</font>
 
 <table>
@@ -211,6 +213,10 @@ class Queue {
 <tr><td></td><td></td><td></td><td bgcolor=#195>length( )</td><td>获取栈的长度</td></tr>
 </tbody>
 </table>
+
+<img src="./src/stack.png">
+
+栈( [Stack]() )是一种后进先出( `LIFO` )的数据结构。
 
 ```javascript
 class Stack {
