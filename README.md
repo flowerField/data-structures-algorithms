@@ -30,7 +30,7 @@ Introduce common data structures and algorithms in JavaScript
 </tbody>
 </table>
 
-<img src="./src/list.png">
+<img src="./src/list.png" width="700px">
 
 列表( [List]() )是一组有序的数据，列表中的数据项称为元素，数据项可以是任意类型。
 
@@ -127,7 +127,7 @@ class List {
 
 ### [Queue]()
 
-> <font face="微软雅黑" size = 5 color = #195 >`队列( Queue )的抽象数据类型定义`</font>
+> <font face="微软雅黑" size = 5 color = #195 >`队列( Queue )的抽象数据类型定义。`</font>
 
 <table>
 <thead>
@@ -142,14 +142,16 @@ class List {
 <tbody>
 <tr><td>  Queue 队列</td><td bgcolor=#195>dataStore</td><td>内部数据</td><td bgcolor=#195>start( )</td><td>获取队首元素</td></tr>
 <tr><td></td><td bgcolor=#195>queueSize</td><td>队列长度</td><td bgcolor=#195>back( )</td><td>获取队尾元素</td></tr>
+<tr><td></td><td></td><td></td><td bgcolor=#195>clear( )</td><td>清理队列内容</td></tr>
+<tr><td></td><td></td><td></td><td bgcolor=#195>length( )</td><td>获取队列长度</td></tr>
 <tr><td></td><td></td><td></td><td bgcolor=#195>enqueue( )</td><td>队尾添加元素</td></tr>
 <tr><td></td><td></td><td></td><td bgcolor=#195>dequeue( )</td><td>队首移出元素</td></tr>
-<tr><td></td><td></td><td></td><td bgcolor=#195>toString( ) </td><td>显示队列元素</td></tr>
 <tr><td></td><td></td><td></td><td bgcolor=#195>isEmpty( )</td><td>队列是否为空</td></tr>
-<tr><td></td><td></td><td></td><td bgcolor=#195>length( )</td><td>获取队列长度</td></tr>
-<tr><td></td><td></td><td></td><td bgcolor=#195>clear( )</td><td>清理队列内容</td></tr>
+<tr><td></td><td></td><td></td><td bgcolor=#195>toString( ) </td><td>显示队列元素</td></tr>
 </tbody>
 </table>
+
+<img src="./src/queue.png" width="700px">
 
 队列( [ Queue]() )是一种列表，是一种先进先出( `FIFO` )的数据结构。
 

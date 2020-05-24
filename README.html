@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="data-structures-algorithms">data-structures-algorithms</h1>
+<p>Introduce common data structures and algorithms in JavaScript</p>
+<h2 id="%E5%B8%B8%E7%94%A8%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84">常用基础数据结构</h2>
+<h3 id="list"><a href="">List</a></h3>
+<blockquote>
+<p><font face="微软雅黑" size = 5 color = #195 ><code>列表( List )的抽象数据类型定义。</code></font></p>
+</blockquote>
+<table>
+<thead>
+<tr><th>数据结构</th><th>内部属性</th><th>属性说明</th><th>核心方法</th><th>功能介绍</th></tr>
+</thead>
+<tbody>
+<tr><td> List 列表</td><td bgcolor=#195>dataStore</td><td>内部数据</td><td bgcolor=#195>clear()</td><td>清空列表重置指针</td></tr>
+<tr><td></td><td bgcolor=#195>listSize</td><td>标识列表的长度</td><td bgcolor=#195>toString()</td><td>转换为字符串显示</td></tr>
+<tr><td></td><td bgcolor=#195>pos</td><td>标识位置的指针</td><td bgcolor=#195>length()</td><td>获取当前列表长度</td></tr>
+<tr><td></td><td></td><td></td><td bgcolor=#195>start( )</td><td>移动指针列表开头</td></tr>
+<tr><td></td><td></td><td></td><td bgcolor=#195>end( ) </td><td>移动指针列表末尾</td></tr>
+<tr><td></td><td></td><td></td><td bgcolor=#195>next(  )</td><td>操作指针向后移动</td></tr>
+<tr><td></td><td></td><td></td><td bgcolor=#195>prev( )</td><td>操作指针向前移动</td></tr>
+<tr><td></td><td></td><td></td><td bgcolor=#195>showList( )</td><td>显示当前列表信息</td></tr>
+<tr><td></td><td></td><td></td><td bgcolor=#195>currentPos( )</td><td>获取当前的指针位置</td></tr>
+<tr><td></td><td></td><td></td><td bgcolor=#195>moveTo( position )</td><td>移动指针到特定位置</td></tr>
+<tr><td></td><td></td><td></td><td bgcolor=#195>remove( element )</td><td>删除列表中指定元素</td></tr>
+<tr><td></td><td></td><td></td><td bgcolor=#195>append( element )</td><td>在列表末尾追加元素</td></tr>
+<tr><td></td><td></td><td></td><td bgcolor=#195>insert( element,after )</td><td>往列表中间插入元素</td></tr>
+<tr><td></td><td></td><td></td><td bgcolor=#195>getCurrentElement( )</td><td>获取当前指向的元素</td></tr>
+</tbody>
+</table>
+<img src="./src/list.png" width="700px">
+<p>列表( <a href="">List</a> )是一组有序的数据，列表中的数据项称为元素，数据项可以是任意类型。</p>
+<p>列表( <a href="">List</a> )有长度，长度为零的列表称为空列表，列表适用于简单的待办事项列表、购物清单和排行榜等场景，在下面给出列表的 JavaScript 语言实现。</p>
+<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">List</span> </span>{
+    <span class="hljs-keyword">constructor</span>() {
+        <span class="hljs-keyword">this</span>.listSize = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">this</span>.pos = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">this</span>.dataStore = [];
+    }
+    length() {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.listSize;
+    }
+    toString() {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.dataStore.join(<span class="hljs-string">"\n"</span>);
+    }
+    contains(element) {
+        <span class="hljs-keyword">let</span> findIndex = <span class="hljs-keyword">this</span>.find(element);
+        <span class="hljs-keyword">return</span> findIndex == <span class="hljs-number">-1</span> ? <span class="hljs-literal">false</span> : <span class="hljs-literal">true</span>;
+    }
+    start() {
+        <span class="hljs-keyword">this</span>.pos = <span class="hljs-number">0</span>;
+    }
+    end() {
+        <span class="hljs-keyword">this</span>.pos = <span class="hljs-keyword">this</span>.listSize - <span class="hljs-number">1</span>;
+    }
+    prev() {
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.pos &gt; <span class="hljs-number">0</span>) {
+            --<span class="hljs-keyword">this</span>.pos;
+        }
+    }
+    next() {
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.pos &lt; <span class="hljs-keyword">this</span>.listSize - <span class="hljs-number">1</span>) {
+            ++<span class="hljs-keyword">this</span>.pos;
+        }
+    }
+    insert(element, after) {
+        <span class="hljs-keyword">let</span> insertIndex = <span class="hljs-keyword">this</span>.find(element);
+        <span class="hljs-keyword">if</span> (insertIndex != <span class="hljs-number">-1</span>) {
+            <span class="hljs-keyword">this</span>.dataStore.splice(insertIndex + <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, element);
+            ++<span class="hljs-keyword">this</span>.listSize;
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+        }
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    }
+    append(element) {
+        <span class="hljs-keyword">this</span>.dataStore[<span class="hljs-keyword">this</span>.listSize++] = element;
+    }
+    find(element) {
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> index = <span class="hljs-number">0</span>; index &lt; <span class="hljs-keyword">this</span>.dataStore.length; index++) {
+            <span class="hljs-keyword">const</span> currentElement = <span class="hljs-keyword">this</span>.dataStore[index];
+            <span class="hljs-keyword">if</span> (currentElement == element) {
+                <span class="hljs-keyword">return</span> index;
+            }
+            <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;
+        }
+    }
+    remove(element) {
+        <span class="hljs-keyword">let</span> findIndex = <span class="hljs-keyword">this</span>.find(element);
+        <span class="hljs-keyword">if</span> (findIndex != <span class="hljs-number">-1</span>) {
+            <span class="hljs-keyword">this</span>.dataStore.splice(findIndex, <span class="hljs-number">1</span>);
+            --<span class="hljs-keyword">this</span>.listSize;
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+        }
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    }
+    clear() {
+        <span class="hljs-keyword">this</span>.dataStore = [];
+        <span class="hljs-keyword">this</span>.listSize = <span class="hljs-keyword">this</span>.pos = <span class="hljs-number">0</span>;
+    }
+    currentPos() {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.pos;
+    }
+    moveTo(position) {
+        <span class="hljs-keyword">if</span> (position &gt;= <span class="hljs-number">0</span> &amp;&amp; position &lt;= <span class="hljs-keyword">this</span>.listSize - <span class="hljs-number">1</span>) {
+            <span class="hljs-keyword">this</span>.pos = position;
+        }
+    }
+    getCurrentElement() {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.dataStore[<span class="hljs-keyword">this</span>.pos];
+    }
+    showList() {
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-keyword">this</span>.dataStore.length; i++) {
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`<span class="hljs-subst">${<span class="hljs-keyword">this</span>.dataStore[i]}</span>`</span>)
+        }
+    }
+}
+</div></code></pre>
+<hr>
+<h3 id="queue"><a href="">Queue</a></h3>
+<blockquote>
+<p><font face="微软雅黑" size = 5 color = #195 ><code>队列( Queue )的抽象数据类型定义。</code></font></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>数据结构</th>
+<th>内部属性</th>
+<th>属性说明</th>
+<th>核心方法</th>
+<th>功能介绍</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>  Queue 队列</td><td bgcolor=#195>dataStore</td><td>内部数据</td><td bgcolor=#195>start( )</td><td>获取队首元素</td></tr>
+<tr><td></td><td bgcolor=#195>queueSize</td><td>队列长度</td><td bgcolor=#195>back( )</td><td>获取队尾元素</td></tr>
+<tr><td></td><td></td><td></td><td bgcolor=#195>clear( )</td><td>清理队列内容</td></tr>
+<tr><td></td><td></td><td></td><td bgcolor=#195>length( )</td><td>获取队列长度</td></tr>
+<tr><td></td><td></td><td></td><td bgcolor=#195>enqueue( )</td><td>队尾添加元素</td></tr>
+<tr><td></td><td></td><td></td><td bgcolor=#195>dequeue( )</td><td>队首移出元素</td></tr>
+<tr><td></td><td></td><td></td><td bgcolor=#195>isEmpty( )</td><td>队列是否为空</td></tr>
+<tr><td></td><td></td><td></td><td bgcolor=#195>toString( ) </td><td>显示队列元素</td></tr>
+</tbody>
+</table>
+<p>队列( <a href=""> Queue</a> )是一种列表，是一种先进先出( <code>FIFO</code> )的数据结构。</p>
+<p>队列( <a href=""> Queue</a> )用于存储按顺序排序的数据，在操作队列的时候遵循的是先进先出的原则，主要操作是入队( <code>新增元素</code> )和出队( <code>删除元素</code> )，队列也有长度，队列适用于处理多个动画任务的执行、打印任务池等场景，下面给出队列的 JavaScript 语言实现。</p>
+<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Queue</span> </span>{
+    <span class="hljs-keyword">constructor</span>(queue) {
+        <span class="hljs-keyword">this</span>.dataStore = queue || [];
+        <span class="hljs-keyword">this</span>.queueSize = queue.length || <span class="hljs-number">0</span>;
+    }
+    start() {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.dataStore[<span class="hljs-number">0</span>];
+    }
+    end() {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.dataStore[<span class="hljs-keyword">this</span>.dataStore.length - <span class="hljs-number">1</span>];
+    }
+    toString() {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.dataStore.join(<span class="hljs-string">"\n"</span>);
+    }
+    isEmpty() {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.dataStore.length == <span class="hljs-number">0</span> ? <span class="hljs-literal">true</span> : <span class="hljs-literal">false</span>;
+    }
+    enqueue(element) {
+        <span class="hljs-keyword">this</span>.dataStore.push(element);
+        ++<span class="hljs-keyword">this</span>.queueSize;
+    }
+    dequeue() {
+        <span class="hljs-keyword">this</span>.dataStore.shift();
+        --<span class="hljs-keyword">this</span>.queueSize;
+    }
+    length() {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.queueSize;
+    }
+}
+
+</div></code></pre>
+<h3 id="stack"><a href="">Stack</a></h3>
+<blockquote>
+<p><font face="微软雅黑" size = 5 color = #195 ><code>栈(  Stack )的抽象数据类型定义</code></font></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>数据结构</th>
+<th>内部属性</th>
+<th>属性说明</th>
+<th>核心方法</th>
+<th>功能介绍</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>  Stack 栈</td><td bgcolor=#195>dataStore</td><td>内部数据</td><td bgcolor=#195>push( )</td><td>元素入栈操作</td></tr>
+<tr><td></td><td bgcolor=#195>top</td><td >栈顶指针</td><td bgcolor=#195> pop( )</td><td>元素出栈操作</td></tr>
+<tr><td></td><td></td><td></td><td bgcolor=#195>peek( )</td><td>获取栈顶元素</td></tr>
+<tr><td></td><td></td><td></td><td bgcolor=#195>clear( )</td><td>清理栈的内容</td></tr>
+<tr><td></td><td></td><td></td><td bgcolor=#195>length( )</td><td>获取栈的长度</td></tr>
+</tbody>
+</table>
+<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Stack</span> </span>{
+    <span class="hljs-keyword">constructor</span>() {
+        <span class="hljs-keyword">this</span>.top = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">this</span>.dataStore = [];
+    }
+    pop() {
+        <span class="hljs-keyword">this</span>.dataStore[--<span class="hljs-keyword">this</span>.top];
+    }
+    push(element) {
+        <span class="hljs-keyword">this</span>.dataStore[<span class="hljs-keyword">this</span>.top++] = element;
+    }
+    peek() {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.dataStore[<span class="hljs-keyword">this</span>.top - <span class="hljs-number">1</span>];
+    }
+    clear() {
+        <span class="hljs-keyword">this</span>.top = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">this</span>.dataStore = [];
+    }
+    length() {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.top;
+    }
+}
+</div></code></pre>
+<h3 id="set"><a href="">Set</a></h3>
+<h3 id="dictionary"><a href="">Dictionary</a></h3>
+<h3 id="tree"><a href="">Tree</a></h3>
+<h2 id="%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0"><a href="">博客文章</a></h2>
+<p><a href="http://wendingding.com/2016/10/13/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%20%5B01%5D-%E6%95%B0%E7%BB%84%E5%92%8C%E9%93%BE%E8%A1%A8%E3%80%81%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F%E4%B8%8E%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/">数据结构与算法 [01]-数组、链表和选择排序</a></p>
+<p><a href="http://wendingding.com/2016/11/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%20%5B02%5D-%E6%A0%88%E3%80%81%E9%98%9F%E5%88%97%E4%B8%8E%E9%80%92%E5%BD%92/">数据结构与算法 [02]-栈、队列和递归</a></p>
+<p><a href="http://wendingding.com/2016/11/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%20%5B03%5D-%E6%A0%88%E7%9A%84%E5%AE%9E%E7%8E%B0%E5%92%8C%E5%BA%94%E7%94%A8(JavaScript)/">数据结构与算法 [03]-栈的实现和应用</a></p>
+
+</body>
+</html>
