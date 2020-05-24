@@ -127,7 +127,7 @@ class List {
 
 ### [Queue]()
 
-<img src="./src/queue_t.png">
+<img src="./src/queue_t.png" width="650px">
 
 > <font face="微软雅黑" size = 5 color = #195 >`队列( Queue )的抽象数据类型定义。`</font>
 
@@ -214,7 +214,7 @@ class Queue {
 </tbody>
 </table>
 
-<img src="./src/stack.png">
+<img src="./src/stack.png" width="700px">
 
 栈( [Stack]() )是一种后进先出( `LIFO` )的数据结构。
 
