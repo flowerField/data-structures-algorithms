@@ -10,13 +10,7 @@ Introduce common data structures and algorithms in JavaScript
 
 <table>
 <thead>
-<tr>
-<th>数据结构</th>
-<th>内部属性</th>
-<th>属性说明</th>
-<th>核心方法</th>
-<th>功能介绍</th>
-</tr>
+<tr><th>数据结构</th><th>内部属性</th><th>属性说明</th><th>核心方法</th><th>功能介绍</th></tr>
 </thead>
 <tbody>
 <tr><td> List 列表</td><td bgcolor=#195>dataStore</td><td>内部数据</td><td bgcolor=#195>clear()</td><td>清空列表重置指针</td></tr>
@@ -31,15 +25,16 @@ Introduce common data structures and algorithms in JavaScript
 <tr><td></td><td></td><td></td><td bgcolor=#195>moveTo( position )</td><td>移动指针到特定位置</td></tr>
 <tr><td></td><td></td><td></td><td bgcolor=#195>remove( element )</td><td>删除列表中指定元素</td></tr>
 <tr><td></td><td></td><td></td><td bgcolor=#195>append( element )</td><td>在列表末尾追加元素</td></tr>
-<tr><td></td><td></td><td></td><td bgcolor=#195>insert( element,after )</td><td>往列表中间插入元素</td></tr>s
+<tr><td></td><td></td><td></td><td bgcolor=#195>insert( element,after )</td><td>往列表中间插入元素</td></tr>
 <tr><td></td><td></td><td></td><td bgcolor=#195>getCurrentElement( )</td><td>获取当前指向的元素</td></tr>
-
 </tbody>
 </table>
 
 <img src="./src/list.png">
 
-> <font face="微软雅黑" size = 5 color = #195 >`列表( List )的是一组有序的数据，列表中的数据项我们称为元素，数据项可以是任意类型。列表有长度，长度为零的列表称为空列表，适用于简单的待办事项列表、购物清单和排行榜等场景。`</font>
+列表( [List]() )是一组有序的数据，列表中的数据项称为元素，数据项可以是任意类型。
+
+列表( [List]() )有长度，长度为零的列表称为空列表，列表适用于简单的待办事项列表、购物清单和排行榜等场景，给出列表的 JavaScript 语言实现。
 
 ```javascript
 class List {
