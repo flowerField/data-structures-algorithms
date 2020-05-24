@@ -30,7 +30,7 @@ Introduce common data structures and algorithms in JavaScript
 </tbody>
 </table>
 
-<img src="./src/list.png" width="700px">
+<img src="./src/list.png">
 
 列表( [List]() )是一组有序的数据，列表中的数据项称为元素，数据项可以是任意类型。
 
@@ -153,7 +153,7 @@ class List {
 </tbody>
 </table>
 
-<img src="./src/Queue.png" width="700px">
+<img src="./src/queue_t2.png" width="700px">
 
 队列( [ Queue]() )是一种列表，是一种先进先出( `FIFO` )的数据结构。
 
@@ -214,7 +214,7 @@ class Queue {
 </tbody>
 </table>
 
-<img src="./src/stack.png" width="700px">
+<img src="./src/stack.png" width="750px">
 
 栈( [Stack]() )是一种后进先出( `LIFO` )的数据结构。
 
