@@ -6,7 +6,7 @@ Introduce common data structures and algorithms in JavaScript
 
 ### [Tree]()
 
-<img src="./src/tree.png">
+<img src="./src/tree.png" height="250px">
 
 > <font face="微软雅黑" size = 5 color = #195 >`二叉树(  Tree )的抽象数据类型定义。`</font>
 
