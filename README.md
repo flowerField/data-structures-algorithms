@@ -4,6 +4,13 @@ Introduce common data structures and algorithms in JavaScript
 
 ## 常用基础数据结构
 
+### [Tree]()
+
+<img src="./src/tree.png">
+
+> <font face="微软雅黑" size = 5 color = #195 >`二叉树(  Tree )的抽象数据类型定义。`</font>
+
+
 ### [List]()
 
 > <font face="微软雅黑" size = 5 color = #195 >`列表( List )的抽象数据类型定义。`</font>
@@ -247,7 +254,6 @@ class Stack {
 
 ### [Dictionary]()
 
-### [Tree]()
 
 
 ## [博客文章]()
